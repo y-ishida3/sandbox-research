@@ -15,3 +15,35 @@ dependencies = [
     "seaborn>=0.13.2",
     "xgboost>=3.0.5",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.1",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+  "ANN",
+  "F",
+  "E",
+  "W",
+  "I",
+  "B",
+  "UP",
+  "S",
+  "SIM",
+  "RET",
+  "TRY",
+]
+per-file-ignores = { "*.ipynb" = ["F401"] }
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
